@@ -1,0 +1,131 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/src/images/logo.png" type="image/x-icon">
+    <title>Internet Banking - Login</title>
+    <link rel="stylesheet" href="dist/css/output.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            lucide.createIcons();
+        });
+    </script>
+</head>
+
+<body class="bg-gray-50 font-Manrope">
+    <div class="flex">
+
+        <div id="main-content" class="w-full relative">
+
+            <main>
+                <div class="min-h-screen flex items-center justify-center">
+
+                    <!-- Left side (Illustration) -->
+                    <div class="lg:w-3/5 sm:w-none h-screen">
+                        <div
+                            class="relative h-screen object-cover overflow-hidden md:h-screen text-white green_bground justify-center items-center">
+                        </div>
+                    </div>
+
+
+                    <!-- Right Side  -->
+                    <div class="lg:w-2/5 h-screen flex flex-col justify-between overflow-y-auto px-8 py-24">
+
+                        <!-- Top Section: Header + Form -->
+                        <div>
+                            <!-- Header -->
+                            <div class="mb-12">
+                                <div class="mb-4 flex flex-col">
+                                    <label class="text-2xl font-bold">Login to your Account</label>
+                                    <label class="font-normal text-gray-500 text-sm">
+                                        Enter the correct login information.
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <!-- Login Form -->
+                            <form>
+                                <div class="flex flex-col mb-8">
+                                    <div class="flex flex-col mb-8">
+                                        <label for="text" class="text-sm font-semibold text-gray-900 block mb-2">
+                                            Username
+                                        </label>
+                                        <input type="text"
+                                            class="peer bg-gray-50 border border-gray-300 text-gray-900 text-sm font-semibold rounded-md focus:ring-cyan-600 focus:border-cyan-600 block w-full p-3"
+                                            placeholder="Enter your Username" />
+                                    </div>
+
+                                    <div class="flex flex-col mb-4 relative">
+                                        <label for="password" class="text-sm font-semibold text-gray-900 block mb-2">
+                                            Password
+                                        </label>
+                                        <input type="password" name="password" id="password" placeholder="••••••••"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                                            required>
+
+                                        <!-- Eye Icon (toggle) -->
+                                        <button type="button" class="absolute text-gray-500 hover:text-gray-700"
+                                            style="right: 10px; bottom: 10px;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor" class="w-5 h-5">
+                                                <path
+                                                    d="M3.53 2.47a.75.75 0 0 0-1.06 1.06l18 18a.75.75 0 1 0 1.06-1.06l-18-18ZM22.676 12.553a11.249 11.249 0 0 1-2.631 4.31l-3.099-3.099a5.25 5.25 0 0 0-6.71-6.71L7.759 4.577a11.217 11.217 0 0 1 4.242-.827c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113Z" />
+                                                <path
+                                                    d="M15.75 12c0 .18-.013.357-.037.53l-4.244-4.243A3.75 3.75 0 0 1 15.75 12ZM12.53 15.713l-4.243-4.244a3.75 3.75 0 0 0 4.244 4.243Z" />
+                                                <path
+                                                    d="M6.75 12c0-.619.107-1.213.304-1.764l-3.1-3.1a11.25 11.25 0 0 0-2.63 4.31c-.12.362-.12.752 0 1.114 1.489 4.467 5.704 7.69 10.675 7.69 1.5 0 2.933-.294 4.242-.827l-2.477-2.477A5.25 5.25 0 0 1 6.75 12Z" />
+                                            </svg>
+
+                                        </button>
+                                    </div>
+
+                                    <a href="forgot_details.html"
+                                        class="stb_green_text text-sm font-medium underline">Forgot Username /
+                                        Password?
+                                    </a>
+                                </div>
+
+
+                                <!-- Login Button -->
+                                <div class="flex flex-col items-center mb-8">
+                                    <a href="dashboard.html"
+                                        class="main_btn w-2/3 text-center px-6 py-2.5 text-white text-sm font-semibold rounded-md shadow-md transition-all duration-300 hover:shadow-lg mb-4">
+                                        Login
+                                    </a>
+
+                                    <label class="text-sm font-medium">
+                                        Create an Internet Banking Profile?
+                                        <a href="get_started.html" class="text-green-800">Get Started</a>
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Bottom Section: Footer Links -->
+                        <div class="flex items-center justify-center gap-4 text-sm text-gray-600">
+                            <a href="https://digitalbanking.suntrustng.com:8443/OpenInstantSavings/"
+                                target="_blank">Open an Account</a>
+                            <a href="https://suntrustng.com/terms-of-use/" target="_blank">Terms & Conditions</a>
+                            <a href="https://suntrustng.com/privacy-policy-2023/" target="_blank">Privacy Policy</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </main>
+        </div>
+
+    </div>
+</body>
+
+</html>

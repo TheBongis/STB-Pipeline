@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../dist/fonts/GoogleSans/GoogleSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../dist/fonts/GoogleSans/GoogleSans-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../dist/fonts/GoogleSans/GoogleSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../dist/fonts/GoogleSans/GoogleSans-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../dist/fonts/GoogleSans/GoogleSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../dist/fonts/GoogleSans/GoogleSans-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+/* Animate flowing gradient */
+@keyframes flowingBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.bg_huge {
+    background-image: url('../images/Greening.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background-image:
+        /* Brighter vertical lines */
+        repeating-linear-gradient(to right,
+            rgba(0, 93, 48, 0.4) 0px,
+            rgba(0, 93, 48, 0.3) 1px,
+            transparent 1px,
+            transparent 250px),
+        /* Brighter horizontal lines */
+        repeating-linear-gradient(to bottom,
+            rgba(7, 134, 73, 0.3) 0px,
+            rgba(0, 93, 48, 0.2) 1px,
+            transparent 1px,
+            transparent 250px),
+        /* Center vertical line - bold */
+        linear-gradient(to right,
+            transparent calc(50% - 0.05px),
+            rgba(0, 93, 48, 0.5),
+            transparent calc(50% + 0.05px)),
+        /* Center horizontal line - bold */
+        linear-gradient(to bottom,
+            transparent calc(50% - 0.05px),
+            rgba(0, 93, 48, 0.5),
+            transparent calc(50% + 0.05px));
+
+    background-size: 100% 100%;
+
+    mask-image: radial-gradient(ellipse at center,
+            rgba(0, 0, 0, 1) 30%,
+            rgba(0, 0, 0, 0) 100%);
+    mask-composite: intersect;
+}
+
+
+.home_card_bg {
+    background-color: #184D0F;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%230a625c'/%3E%3Cstop offset='1' stop-color='%230a625c' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23063f0a'/%3E%3Cstop offset='1' stop-color='%23063f0a' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23014854'/%3E%3Cstop offset='1' stop-color='%23014854' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23184D0F'/%3E%3Cstop offset='1' stop-color='%23184D0F' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2302027A'/%3E%3Cstop offset='1' stop-color='%2302027A' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23002E0E'/%3E%3Cstop offset='1' stop-color='%23002E0E' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+    background-attachment: fixeed;
+    background-size: cover;
+}

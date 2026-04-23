@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+
+# Build / output folders
+dist/
+build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.*
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Tailwind / PostCSS cache (optional)
+.cache/
+
+# Package lock files (optional - keep if team agrees)
+# package-lock.json
+# yarn.lock
+
+# Misc
+coverage/

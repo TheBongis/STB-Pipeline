@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+
+  /* Keyframe goes here */
+  @keyframes shine {
+    0% {
+      left: -75%;
+    }
+
+    100% {
+      left: 125%;
+    }
+  }
+
+
+
+  /* Green Button Shows here */
+  .main_btn {
+    background-image: radial-gradient(circle,
+        #077c47 20%,
+        #04703d 45%,
+        #095733 100%);
+    @apply relative overflow-hidden transition-all duration-300 rounded-md text-white;
+  }
+
+  .main_btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0.08) 100%);
+    transform: skewX(-20deg);
+    pointer-events: none;
+  }
+
+  .main_btn:hover::before {
+    animation: shine 1.2s ease-out infinite;
+  }
+
+
+
+  /* Black Button Shows here */
+  .black_btn {
+    background-image: radial-gradient(circle,
+        #1a1a1a 20%,
+        #333333 45%,
+        #000000 100%);
+    @apply relative overflow-hidden transition-all duration-300 rounded-md text-white;
+  }
+
+  .black_btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0.08) 100%);
+    transform: skewX(-20deg);
+    pointer-events: none;
+  }
+
+  .black_btn:hover::before {
+    animation: shine 1.2s ease-out infinite;
+  }
+
+
+
+/* Sidebar Button Shows Here */
+  .active_sidebar_page {
+    background-image: radial-gradient(circle,
+        #077c47 20%,
+        #04703d 45%,
+        #095733 100%);
+    @apply relative overflow-hidden rounded-md transition-all duration-300 text-white;
+  }
+
+  .active_sidebar_page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0.08) 100%);
+    transform: skewX(-20deg);
+    pointer-events: none;
+  }
+
+  .active_sidebar_page:hover::before {
+    animation: shine 1.2s ease-out infinite;
+  }
+}

@@ -1,0 +1,475 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/src/images/logo.png" type="image/x-icon">
+    <title>Activity Log</title>
+    <link rel="stylesheet" href="/dist/css/output.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            lucide.createIcons();
+        });
+    </script>
+</head>
+
+
+<body class="font-Manrope bg-gray-50 h-screen">
+    <button data-drawer-target="sidebar_btn" data-drawer-toggle="sidebar_btn" aria-controls="sidebar_btn" type="button"
+        class="inline-flex items-center px-8 py-4 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+        <span class="sr-only">Open sidebar</span>
+        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" fill-rule="evenodd"
+                d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+            </path>
+        </svg>
+    </button>
+
+    <aside id="sidebar_btn"
+        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full lg:!translate-x-0"
+        aria-label="Sidebar">
+        <div class="h-full px-3 py-4 overflow-y-auto bg-white  flex flex-col justify-between">
+
+            <!-- TOP SECTION -->
+            <div class="top-nav">
+                <a href="dashboard.html" class="flex items-center mb-4">
+                    <img src="../images/logo-wide.png" class="h-20 sm:h-20" alt="Flowbite Logo" />
+                </a>
+
+                <ul class="space-y-2 font-medium text-sm">
+                    <li>
+                        <a href="dashboard.html"
+                            class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor"
+                                class="shrink-0 w-5 h-5 text-gray-600 transition duration-75 group-hover:text-gray-900">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" />
+                            </svg>
+
+                            <span class="ms-3">Dashboard</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="channel_manager.html"
+                            class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="shrink-0 w-5 h-5 text-gray-600 transition duration-75 group-hover:text-gray-900">
+                                <path fill-rule="evenodd"
+                                    d="M19.902 4.098a3.75 3.75 0 0 0-5.304 0l-4.5 4.5a3.75 3.75 0 0 0 1.035 6.037.75.75 0 0 1-.646 1.353 5.25 5.25 0 0 1-1.449-8.45l4.5-4.5a5.25 5.25 0 1 1 7.424 7.424l-1.757 1.757a.75.75 0 1 1-1.06-1.06l1.757-1.757a3.75 3.75 0 0 0 0-5.304Zm-7.389 4.267a.75.75 0 0 1 1-.353 5.25 5.25 0 0 1 1.449 8.45l-4.5 4.5a5.25 5.25 0 1 1-7.424-7.424l1.757-1.757a.75.75 0 1 1 1.06 1.06l-1.757 1.757a3.75 3.75 0 1 0 5.304 5.304l4.5-4.5a3.75 3.75 0 0 0-1.035-6.037.75.75 0 0 1-.354-1Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                            <span class="flex-1 ms-3 whitespace-nowrap">Channel Manager</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="activity_log.html"
+                            class="text-white text-sm font-semibold rounded-md bg-gradient-to-br from-green-600 to-green-800 flex items-center w-full p-2.5 shadow-md transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-5 h-5 text-white transition duration-75">
+                                <path fill-rule="evenodd"
+                                    d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625ZM7.5 15a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 7.5 15Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H8.25Z"
+                                    clip-rule="evenodd" />
+                                <path
+                                    d="M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z" />
+                            </svg>
+
+                            <span class="flex-1 ms-3 whitespace-nowrap">Activity Log</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+
+            <!-- BOTTOM SECTION -->
+            <div class="space-y-2 font-medium text-sm">
+
+                <div id="dropdown-cta" class="p-4 mb-4 rounded-lg bg-green-100 border border-green-200 tracking-tight"
+                    role="alert">
+                    <div class="flex items-center mb-3">
+                        <span
+                            class="bg-gray-800 text-white border border-gray-300 text-xs font-semibold me-2 px-4 py-1 rounded-md">Last
+                            Login</span>
+                    </div>
+
+                    <div class="flex flex-col text-xs">
+                        <div class="flex mb-2">
+                            <label class="font-semibold me-2">Date:</label>
+                            <label class="">Tuesday, 22 April, 2025.</label>
+                        </div>
+
+                        <div class="flex">
+                            <label class="font-semibold me-2">Time:</label>
+                            <label class="">14:02:24 WAT</label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <ul class="space-y-2 font-medium text-sm">
+                    <li>
+                        <a href="login.html"
+                            class="flex items-center p-2 text-red-600 rounded-lg hover:bg-red-100  group">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="shrink-0 w-5 h-5 text-red-500 transition duration-75 group-hover:text-red-900">
+                                <path fill-rule="evenodd"
+                                    d="M7.5 3.75A1.5 1.5 0 0 0 6 5.25v13.5a1.5 1.5 0 0 0 1.5 1.5h6a1.5 1.5 0 0 0 1.5-1.5V15a.75.75 0 0 1 1.5 0v3.75a3 3 0 0 1-3 3h-6a3 3 0 0 1-3-3V5.25a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3V9A.75.75 0 0 1 15 9V5.25a1.5 1.5 0 0 0-1.5-1.5h-6Zm5.03 4.72a.75.75 0 0 1 0 1.06l-1.72 1.72h10.94a.75.75 0 0 1 0 1.5H10.81l1.72 1.72a.75.75 0 1 1-1.06 1.06l-3-3a.75.75 0 0 1 0-1.06l3-3a.75.75 0 0 1 1.06 0Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                            <span class="flex-1 ms-3 whitespace-nowrap">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </aside>
+
+    <div class="lg:ml-64 bg-gray-50 gap-4">
+
+        <!-- Page Header  -->
+        <div class="flex items-start justify-between px-8 py-4 mb-8">
+
+            <!-- Page Title  -->
+            <div class="flex flex-col">
+                <label class="font-semibold text-xl text-gray-900">ACTIVITY LOG</label>
+                <label class="font-normal text-xs">A detailed record of recent system actions for transparency and
+                    auditing.</label>
+            </div>
+
+
+            <!-- Page Actions  -->
+            <div class="flex items-center gap-4">
+
+                <!-- Profile Button  -->
+                <div class="profile_button_container">
+                    <button id="profile_image" data-dropdown-toggle="profile_image_avatar"
+                        class="flex items-center justify-center font-medium bg-green-900 text-white rounded-full w-8 h-8 md:me-0 focus:ring-4 focus:ring-gray-300"
+                        type="button">
+                        <span class="sr-only">Open user menu</span>
+                        <span class="text-xs tracking-wider">EG</span>
+                    </button>
+
+
+                    <!-- Profile Dropdown Menu -->
+                    <div id="profile_image_avatar"
+                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44">
+                        <div class="px-4 py-3 text-gray-900">
+                            <div class="font-semibold truncate text-sm">Enoobong George</div>
+                            <div class="font-normal truncate text-xs">enoobong.george@suntrustng.com</div>
+                        </div>
+
+                        <ul class="py-2 text-sm text-gray-700" aria-labelledby="profile_image">
+                            <li>
+                                <a href="dashboard.html" class="block px-4 py-2 hover:bg-gray-100">Dashboard</a>
+                            </li>
+                        </ul>
+                        <div class="py-2">
+                            <a href="login.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign
+                                out</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Main Content  -->
+        <div class="px-8 py-4">
+
+
+            <!-- Date Range Filter  -->
+            <div
+                class="flex flex-column sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
+                <label for="table-search" class="sr-only">Search</label>
+                <div date-rangepicker class="flex flex-wrap items-center self-center gap-1">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                            </svg>
+                        </div>
+                        <input name="start" type="date"
+                            class="bg-white border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                            placeholder="Select date start">
+                    </div>
+
+                    <span class="mx-4 text-gray-500 text-xs">to</span>
+
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                            </svg>
+                        </div>
+                        <input name="end" type="date"
+                            class="bg-white border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                            placeholder="Select date end">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Page Filter Options  -->
+            <div class="flex flex-col sm:flex-row flex-wrap space-y-4 sm:space-y-0 justify-between mb-8">
+                <label for="table-search" class="sr-only">Search</label>
+
+                <!-- Search Field -->
+                <div class="relative flex">
+                    <div
+                        class="absolute inset-y-0 left-0 rtl:inset-r-0 rtl:right-0 flex items-center ps-3 pointer-events-none me-4">
+                        <svg class="w-4 h-4 text-gray-500  " aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <input type="text" id="table-search"
+                        class="block p-2 ps-10 text-xs text-gray-900 border border-gray-300 rounded-md w-80 bg-white"
+                        placeholder="Search">
+                </div>
+
+
+                <div class="flex flex-wrap gap-4">
+
+                    <!-- FIlter Bank -->
+                    <div class="">
+
+                        <button id="sort_by_dropdown" data-dropdown-toggle="sortby_dropdown"
+                            class="flex items-center text-center px-4 py-2.5 text-white text-sm font-semibold rounded-md shadow-lg bg-gradient-to-r from-slate-800 via-gray-900 to-gray-800"
+                            type="button">
+                            Choose a Bank
+                            <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+
+                        <!-- Dropdown menu -->
+                        <div id="sortby_dropdown"
+                            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44">
+                            <ul class="py-2 text-sm text-gray-700" aria-labelledby="sort_by_dropdown">
+
+                                <!-- Sort A–Z -->
+                                <li>
+                                    <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100">
+                                        <!-- A–Z Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-gray-500"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 8h14M5 16h14M5 8l4-4m-4 4l4 4" />
+                                        </svg>
+                                        UBA Bank
+                                    </a>
+                                </li>
+
+                                <!-- Sort Z–A -->
+                                <li>
+                                    <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100">
+                                        <!-- Z–A Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-gray-500"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 8h14M5 16h14M5 16l4-4m-4 4l4 4" />
+                                        </svg>
+                                        Access Bank
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <!-- Filter Channel -->
+                    <div class="">
+
+                        <button id="channel_type_dropdown" data-dropdown-toggle="channel_dropdown"
+                            class="text-center px-6 py-2.5 text-white text-sm font-semibold rounded-md shadow-lg bg-gradient-to-br from-green-600 to-green-800 flex items-center"
+                            type="button">
+                            Filter Channel
+                            <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+
+                        <!-- Dropdown menu -->
+                        <div id="channel_dropdown"
+                            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44">
+                            <ul class="py-2 text-sm text-gray-700" aria-labelledby="channel_type_dropdown">
+
+
+                                <li>
+                                    <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100">
+                                        <!-- A–Z Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-gray-500"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 8h14M5 16h14M5 8l4-4m-4 4l4 4" />
+                                        </svg>
+                                        CoralPay
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#" class="flex items-center px-4 py-2 hover:bg-gray-100">
+                                        <!-- Z–A Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2 text-gray-500"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 8h14M5 16h14M5 16l4-4m-4 4l4 4" />
+                                        </svg>
+                                        NIBBS
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Activity Log body -->
+            <div class="flex flex-col mb-8 text-black overflow-auto" style="max-height: 24em;">
+
+                <!-- Today -->
+                <div class="flex flex-col mb-8">
+                    <h2 class="text-lg font-semibold mb-4">Today, <span class="">13th August 2025</span></h2>
+
+                    <!-- Activity Item -->
+                    <div class="flex items-start justify-between py-4 border-b border-gray-200 text-sm">
+                        <div class="flex space-x-4">
+                            <img src="../images/Bongis.jpg" alt="Avatar" class="w-10 h-10 rounded-full object-cover">
+
+                            <div class="flex flex-col items-start justify-between">
+                                <p>
+                                    <span class="font-bold">Enoobong George</span> switched <span class="font-bold">UBA
+                                        Bank</span> from <span class="font-medium italic">NIBBS</span> to <span
+                                        class="font-semibold italic">CoralPay
+                                    </span>.
+                                </p>
+                                <span class="text-sm text-gray-500">2h ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity Item -->
+                    <div class="flex items-start justify-between py-4 border-b border-gray-200 text-sm">
+                        <div class="flex space-x-4">
+                            <div class="flex items-center p-1 bg-green-200 rounded-full w-fit">
+                                <div
+                                    class="flex items-center justify-center w-8 h-8 font-medium text-white bg-green-900 rounded-full md:me-0">
+                                    <span class="text-sm tracking-wider">JM</span>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col items-start justify-between">
+                                <p>
+                                    <span class="font-bold">James Majekodunmi</span> switched <span
+                                        class="font-bold">Access Bank
+                                    </span> from <span class="font-medium italic">CoralPay</span> to <span
+                                        class="font-semibold italic">NIBBS
+                                    </span>.
+                                </p>
+                                <span class="text-sm text-gray-500">07:49am</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Yesterday -->
+                <div class="flex flex-col mb-8">
+                    <h2 class="text-lg font-semibold mb-4">12th August 2025</h2>
+
+                    <!-- Activity Item -->
+                    <div class="flex items-start justify-between py-4 border-b border-gray-300 text-sm">
+                        <div class="flex space-x-4">
+                            <div class="flex items-center p-1 bg-green-200 rounded-full w-fit">
+                                <div
+                                    class="flex items-center justify-center w-8 h-8 font-medium text-white bg-green-900 rounded-full md:me-0">
+                                    <span class="text-sm tracking-wider">OO</span>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col items-start justify-between">
+                                <p>
+                                    <span class="font-bold">Olajide Olaoti</span> switched <span class="font-bold">UBA
+                                        Bank</span> from <span class="font-medium italic">NIBBS</span> to <span
+                                        class="font-semibold italic">CoralPay
+                                    </span>.
+                                </p>
+                                <span class="text-sm text-gray-500">11:37am</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity Item -->
+                    <div class="flex items-start justify-between py-4 border-b border-gray-200 text-sm">
+                        <div class="flex space-x-4">
+                            <div class="flex items-center p-1 bg-green-200 rounded-full w-fit">
+                                <div
+                                    class="flex items-center justify-center w-8 h-8 font-medium text-white bg-green-900 rounded-full md:me-0">
+                                    <span class="text-sm tracking-wider">RA</span>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col items-start justify-between">
+                                <p>
+                                    <span class="font-bold">Roy Ayers</span> switched <span class="font-bold">UBA
+                                        Bank</span> from <span class="font-medium italic">NIBBS</span> to <span
+                                        class="font-semibold italic">CoralPay
+                                    </span>.
+                                </p>
+                                <span class="text-sm text-gray-500">18:49pm</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <script src="../js/chart.js"></script>
+</body>
+
+</html>
